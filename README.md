@@ -1,2 +1,2 @@
 # Listy_Wiazane
-Implementation of two- and one- way lists in Java. 
+Implementation of singly- and multi- linked lists. 
