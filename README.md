@@ -12,8 +12,8 @@ h. DelFirst T1 T2 – deletes first car from "T1" train and creates a new "T2" c
 i. DelLast T1 T2 – deletes last car from "T1" train and creates a new "T2" car with the erased beforehand car assuming it's the last element in list.
 
 Input: 
-> no. sets
-> line of the taken set
-> line
+1. no. sets
+2. no. lines of the taken set
+3. line
 ...
-> lines
+4. lines
