@@ -52,24 +52,25 @@ public class WagonyLista {
 
     public int delFirst(){
         Wagon p = this.first;
-        try {
-            this.first = p.getNext();
-            this.first.setNext(p.getNext().getNext());
-            this.first.setPrev(null);
+        if(p == null){
+            return 0;
         }
-        catch (NullPointerException e) { return 0; }
 
+        this.first = p.getNext();
+        this.first.setNext(p.getNext().getNext());
+        this.first.setPrev(null);
         return 1;
     }
 
     public int delLast(){
         Wagon p = this.last;
-        try{
-            this.last = p.getPrev();
-            this.last.setPrev(p.getPrev().getPrev());
-            this.last.setNext(null);
+        if(p == null){
+            return 0;
         }
-        catch (NullPointerException e) { return 0; }
+
+        this.last = p.getPrev();
+        this.last.setPrev(p.getPrev().getPrev());
+        this.last.setNext(null);
         return 1;
     }
 

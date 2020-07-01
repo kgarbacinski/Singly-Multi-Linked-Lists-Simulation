@@ -57,51 +57,52 @@ public class PociagiLista {
 
     public void delFirstWagon(String definedName, String newName) {
         Pociag definedPociag = this.findPociag(definedName); // Znajdz pociag z ktorego usunac pierwszy wagon
-        try {
-            WagonyLista newWagonyList = new WagonyLista();
-            Wagon newWagon = new Wagon(definedPociag.getWagonyList().getFirst().getName());
-
-            if (this.findPociag(newName) != null) {
-                System.out.println("Train " + newName + " already exists"); // Wyjatek gdy nie znajdzie pociagu nr 2
-                int result = definedPociag.getWagonyList().delFirst();
-                if (result == 0) deletePociag(definedName); // 0 jesli usunieto pociag
-            }
-            else {
-                newWagonyList.addLast(newWagon);
-                Pociag newPociag = new Pociag(newWagonyList, newName);
-                this.addAfter(newPociag, definedName);
-
-                int result = definedPociag.getWagonyList().delFirst();
-                if (result == 0) deletePociag(definedName); // 0 jesli usunieto pociag
-            }
-        } catch (NullPointerException e) {
-            System.out.println("Train " + definedName + " does not exist"); // Wyjatek
+        if(definedPociag == null){
+            System.out.println("Train " + definedName + " does not exist");
+            return;
         }
 
+        WagonyLista newWagonyList = new WagonyLista();
+        Wagon newWagon = new Wagon(definedPociag.getWagonyList().getFirst().getName());
+
+        if (this.findPociag(newName) != null) {
+            System.out.println("Train " + newName + " already exists"); // Wyjatek gdy nie znajdzie pociagu nr 2
+            int result = definedPociag.getWagonyList().delFirst();
+            if (result == 0) deletePociag(definedName); // 0 jesli usunieto pociag
+        }
+        else {
+            newWagonyList.addLast(newWagon);
+            Pociag newPociag = new Pociag(newWagonyList, newName);
+            this.addAfter(newPociag, definedName);
+
+            int result = definedPociag.getWagonyList().delFirst();
+            if (result == 0) deletePociag(definedName); // 0 jesli usunieto pociag
+        }
     }
 
     /* Patrz wyzej */
     public void delLastWagon(String definedName, String newName) {
         Pociag definedPociag = this.findPociag(definedName);
 
-        try {
-            WagonyLista newWagonyList = new WagonyLista();
-            Wagon newWagon = new Wagon(definedPociag.getWagonyList().getLast().getName());
-            if (this.findPociag(newName) != null) {
-                System.out.println("Train " + newName + " already exists");
-                int result = definedPociag.getWagonyList().delLast(); // Sprawdz czy usunieto ostatni element
-                if (result == 0) deletePociag(definedName); // Jezeli usunieto ostatni element
-            }
-            else {
-                newWagonyList.addLast(newWagon);
-                Pociag newPociag = new Pociag(newWagonyList, newName);
-                this.addAfter(newPociag, definedName);
-
-                int result = definedPociag.getWagonyList().delLast(); // Sprawdz czy usunieto ostatni element
-                if (result == 0) deletePociag(definedName); // Jezeli usunieto ostatni element
-            }
-        } catch (NullPointerException e) {
+        if(definedPociag == null){
             System.out.println("Train " + definedName + " does not exist");
+            return;
+        }
+
+        WagonyLista newWagonyList = new WagonyLista();
+        Wagon newWagon = new Wagon(definedPociag.getWagonyList().getLast().getName());
+        if (this.findPociag(newName) != null) {
+            System.out.println("Train " + newName + " already exists");
+            int result = definedPociag.getWagonyList().delLast(); // Sprawdz czy usunieto ostatni element
+            if (result == 0) deletePociag(definedName); // Jezeli usunieto ostatni element
+        }
+        else {
+            newWagonyList.addLast(newWagon);
+            Pociag newPociag = new Pociag(newWagonyList, newName);
+            this.addAfter(newPociag, definedName);
+
+            int result = definedPociag.getWagonyList().delLast(); // Sprawdz czy usunieto ostatni element
+            if (result == 0) deletePociag(definedName); // Jezeli usunieto ostatni element
         }
 
     }
