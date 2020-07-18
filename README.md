@@ -1,7 +1,7 @@
 # Singly- and multi- linked lists
 
 # Instruction:
-
+- Commands
 1. New T1 W – creates a new "T1" train with one "W" car and inserts it into the trains' list.
 2. InsertFirst T1 W – appends existing "W" car to the beginnig of "T1" train.
 3. InsertLast T1 W – appends existing "W" car to the end of "T1" train.
