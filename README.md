@@ -1,5 +1,6 @@
 # Singly- and multi- linked lists
-Functionality:
+
+# Instruction:
 
 1. New T1 W – creates a new "T1" train with one "W" car and inserts it into the trains' list.
 2. InsertFirst T1 W – appends existing "W" car to the beginnig of "T1" train.
@@ -11,7 +12,7 @@ Functionality:
 8. DelFirst T1 T2 – deletes first car from "T1" train and creates a new "T2" car with the erased beforehand car assuming it's the last lement in list.
 9. DelLast T1 T2 – deletes last car from "T1" train and creates a new "T2" car with the erased beforehand car assuming it's the last element in list.
 
-Input: 
+- Input: 
 1. no. sets
 2. no. lines of the taken set
 3. line
